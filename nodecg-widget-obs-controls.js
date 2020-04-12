@@ -118,6 +118,8 @@ class NodecgWidgetObsControls extends Polymer.Element {
 	_handleWebsocketReplicantChange(newVal) {
 		this.disableControls = newVal.status === 'connected' || newVal.status === 'connecting';
 		this._setStatus(newVal.status);
+		if (newVal.password.length > 0)
+			this.password = newVal.password;
 	}
 }
 
